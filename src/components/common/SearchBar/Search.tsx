@@ -1,5 +1,6 @@
+
 import CardItemDetails from '../../../data/CardItemDetails';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SearchDisplay from './SearchDisplay';
 
 import {
@@ -11,12 +12,31 @@ import {
   CardItem,
   Container,
 } from './SearchStyle';
+import { mapProducts } from '../../utils/mapProducts';
 
 import { sortSpace, filterSpace } from '../../../resources/String';
 import { FaSearch, FaSort, FaFilter } from 'react-icons/fa';
+import { Heading } from '../../dashBoard/FeaturedProducts/FeaturedItemStyle';
+import { IndividualProductModel } from '../../../models/IndividualProductModel';
 
 export const Search: React.FC = () => {
-  const [text, setText] = React.useState<string>('');
+  const [text, setText] = useState<string>('');
+  const [products, setProducts] = useState<IndividualProductModel[] | null>(
+    null
+  );
+  useEffect(() => {
+    const mappedProducts = mapProducts(CardItemDetails);
+    setProducts(mappedProducts);
+  }, []);
+
+  if (products === null) return <Heading>loading</Heading>;
+  let displayProducts = products;
+  if (text !== null) {
+    const duplicateProducts = [...displayProducts];
+    displayProducts = duplicateProducts.filter((product) =>
+      product.productName.toLowerCase().includes(text.toLowerCase())
+    );
+  }
 
   return (
     <>
@@ -40,22 +60,22 @@ export const Search: React.FC = () => {
           </FilterSpace>
         </FilterDivision>
         <CardItem>
-          {
-          CardItemDetails.filter((product) =>
-            product.productName.toLowerCase().includes(text.toLowerCase())
-          ).map((product) => {
-            return (
-              <div key={product.id}>
+          {displayProducts.length !== 0 &&
+            displayProducts.map((product, i) => {
+              return (
                 <SearchDisplay
+                  key={i}
+                  id={i}
                   name={product.productName}
                   brand={product.productBrand}
                   price={product.productPrice}
                   rating={product.productRating}
                   image={product.productImage}
+                  featured={product.isFeatured}
                 />
-              </div>
-            );
-          })}
+              );
+            })}
+          {displayProducts.length === 0 && <Heading>No Products Found</Heading>}
         </CardItem>
       </Container>
     </>

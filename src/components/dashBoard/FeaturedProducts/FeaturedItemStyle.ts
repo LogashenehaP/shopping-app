@@ -4,7 +4,7 @@ export const Heading = styled.h3`
   color: darkGrey;
   text-align: center;
   font-size: 25px;
-  padding:10px;
+  padding: 10px;
 `;
 export const FeaturedBox = styled.div`
   box-shadow: 0 0 3px slateGray;

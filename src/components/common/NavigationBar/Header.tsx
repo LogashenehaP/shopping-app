@@ -2,7 +2,7 @@ import { navigationContent } from '../../../resources/String';
 import { NavigationBar, LogoImage, AnchorTag } from './HeaderStyle';
 import { image } from '../../../resources/Images';
 
-const Header: React.FC = () => {
+const Header: React.FC = (): JSX.Element => {
   return (
     <div>
       <NavigationBar>

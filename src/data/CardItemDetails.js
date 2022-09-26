@@ -1,17 +1,8 @@
 import { image } from '../resources/Images';
 import { productDetails } from '../resources/String';
 
-const CardItemDetails: {
-  id: number;
-  productName: string;
-  isFeatured: boolean;
-  productBrand: string;
-  productRating: number;
-  productImage: string;
-  productPrice: number;
-}[] = [
+const CardItemDetails = [
   {
-    id: 1,
     productName: productDetails.appleWatchName,
     isFeatured: false,
     productBrand: productDetails.appleBrand,
@@ -21,7 +12,6 @@ const CardItemDetails: {
   },
 
   {
-    id: 2,
     productName: productDetails.fastTrackWatchName,
     isFeatured: false,
     productBrand: productDetails.fastTrackBrand,
@@ -30,7 +20,6 @@ const CardItemDetails: {
     productImage: image.fastTrackWatch,
   },
   {
-    id: 3,
     productName: productDetails.casioWatchName,
     isFeatured: false,
     productBrand: productDetails.casioBrand,
@@ -39,7 +28,6 @@ const CardItemDetails: {
     productImage: image.casioWatch,
   },
   {
-    id: 4,
     productName: productDetails.appleMobileName,
     isFeatured: true,
     productBrand: productDetails.appleBrand,
@@ -48,7 +36,6 @@ const CardItemDetails: {
     productImage: image.appleMobile,
   },
   {
-    id: 5,
     productName: productDetails.vivoMobileName,
     isFeatured: false,
     productBrand: productDetails.vivoBrand,
@@ -57,7 +44,6 @@ const CardItemDetails: {
     productImage: image.vivoMobile,
   },
   {
-    id: 6,
     productName: productDetails.onePlusMobileName,
     isFeatured: false,
     productBrand: productDetails.onePlusBrand,
@@ -66,7 +52,6 @@ const CardItemDetails: {
     productImage: image.onePlusMobile,
   },
   {
-    id: 7,
     productName: productDetails.appleLapName,
     isFeatured: false,
     productBrand: productDetails.appleBrand,
@@ -75,16 +60,14 @@ const CardItemDetails: {
     productImage: image.appleLaptop,
   },
   {
-    id: 8,
     productName: productDetails.dellLapName,
-    isFeatured: true,
+    isFeatured: false,
     productBrand: productDetails.dellBrand,
     productRating: productDetails.dellLapRating,
     productPrice: productDetails.dellLapPrice,
     productImage: image.dellLaptop,
   },
   {
-    id: 9,
     productName: productDetails.lenovoLapName,
     isFeatured: false,
     productBrand: productDetails.lenovoBrand,
@@ -93,16 +76,14 @@ const CardItemDetails: {
     productImage: image.lenovoLaptop,
   },
   {
-    id: 10,
     productName: productDetails.appleAirPodName,
-    isFeatured: false,
+    isFeatured: true,
     productBrand: productDetails.appleBrand,
     productRating: productDetails.appleAirPodRating,
     productPrice: productDetails.appleAirPodPrice,
     productImage: image.appleAirPods,
   },
   {
-    id: 11,
     productName: productDetails.boatAirPodName,
     isFeatured: false,
     productBrand: productDetails.boatBrand,
@@ -111,7 +92,6 @@ const CardItemDetails: {
     productImage: image.boatAirPods,
   },
   {
-    id: 12,
     productName: productDetails.jblAirPodName,
     isFeatured: false,
     productBrand: productDetails.jblBrand,
@@ -120,7 +100,6 @@ const CardItemDetails: {
     productImage: image.jblAirPods,
   },
   {
-    id: 13,
     productName: productDetails.miTvName,
     isFeatured: false,
     productBrand: productDetails.miBrand,
@@ -129,18 +108,16 @@ const CardItemDetails: {
     productImage: image.miTv,
   },
   {
-    id: 14,
     productName: productDetails.sonyTvName,
-    isFeatured: false,
+    isFeatured: true,
     productBrand: productDetails.sonyBrand,
     productRating: productDetails.sonyTvRating,
     productPrice: productDetails.sonyTvPrice,
     productImage: image.sonyTv,
   },
   {
-    id: 15,
     productName: productDetails.samsungTvName,
-    isFeatured: true,
+    isFeatured: false,
     productBrand: productDetails.samsungBrand,
     productRating: productDetails.samsungTvRating,
     productPrice: productDetails.samsungTvPrice,
